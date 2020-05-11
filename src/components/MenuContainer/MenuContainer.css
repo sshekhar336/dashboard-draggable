@@ -1,0 +1,41 @@
+.menuContainer{
+    display: flex;
+    align-items: center;
+}
+
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.createBoardButton{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: blue;
+    color: white;
+    margin: 0 5px;
+}
+
+.cancelButton{
+    margin: 0 5px;
+    padding: 10px 20px;
+    border: none;
+    background-color: white;
+    border-radius: 6px;
+}
+
+.boards{
+    padding-left: 3vw;
+}
+
+.singleBoard{
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-right: 3px;
+}
+
+.singleBoard:hover{
+    background-color: rgb(172, 164, 164);
+}

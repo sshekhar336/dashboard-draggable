@@ -1,0 +1,25 @@
+.workspace{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.workspace-title{
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    font-weight: bold;
+}
+
+.search-boards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 0;
+}
+
+.dashboardContainer{
+    padding: 10px;
+    border-top: 0.1px solid rgb(187, 175, 175);
+    border-bottom: 0.1px solid rgb(185, 175, 175);
+}

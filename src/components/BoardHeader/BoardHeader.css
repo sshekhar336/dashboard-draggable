@@ -1,0 +1,8 @@
+.boardTitleConatiner{
+    display: flex;
+    align-items: center;
+}
+
+.boardHeader{
+    padding-left: 10px;
+}

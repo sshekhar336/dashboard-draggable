@@ -1,0 +1,39 @@
+.leftMenu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    /* position: fixed; */
+}
+
+.topMenu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.bottomMenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.icon-padding{
+    padding: 10px 0;
+}
+
+.upgrade-button{
+    position: relative;
+    background-color: rgb(108, 206, 108);
+    color: white;
+    bottom: 55%;
+    padding: 2px 15px;
+    transform: rotate(90deg);
+    left: -27%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    font-size: 14px;
+}

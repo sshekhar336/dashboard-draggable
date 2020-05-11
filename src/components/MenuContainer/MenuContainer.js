@@ -4,6 +4,7 @@ import { FaHome } from "react-icons/fa";
 import { AiOutlineCaretDown } from "react-icons/ai";
 import { MdAddCircleOutline } from "react-icons/md";
 import Modal from 'react-modal';
+import { connect } from 'react-redux';
 
 const customStyles = {
     content: {
@@ -24,7 +25,7 @@ class MenuContainer extends Component {
         this.state = {
             showCreateBoardModal: false,
             newBoardName: '',
-            boardLists: []
+            boardLists: ['Web design']
         }
     }
 
@@ -76,6 +77,10 @@ class MenuContainer extends Component {
         )
     }
 
+    changeBoardName = (name) => {
+        this.props.changeBoardNameAction(name);
+    }
+
     render() {
         return (
             <div>
@@ -92,13 +97,13 @@ class MenuContainer extends Component {
                 </div>
                 <div className="boards">
                     {
-                        this.state.boardLists.length !=0 ? 
-                        this.state.boardLists.map((board) => {
-                            return (
-                                <div className="singleBoard">{board}</div>
-                            )
-                        })
-                        : null
+                        this.state.boardLists.length !== 0 ?
+                            this.state.boardLists.map((board, index) => {
+                                return (
+                                    <div key={index} className="singleBoard" onClick={() => this.changeBoardName(board)}>{board}</div>
+                                )
+                            })
+                            : null
                     }
                 </div>
             </div>
@@ -107,4 +112,11 @@ class MenuContainer extends Component {
     }
 }
 
-export default MenuContainer
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changeBoardNameAction: (boardName) => dispatch({ type: 'CHANGE_BOARD_NAME_ACTION', payload: boardName })
+    }
+
+}
+
+export default connect(null, mapDispatchToProps)(MenuContainer)

@@ -9,6 +9,7 @@ import { GoKebabHorizontal } from "react-icons/go";
 import { AiOutlineTable } from "react-icons/ai";
 import { IoMdEyeOff } from "react-icons/io";
 import { MdFilterList } from "react-icons/md";
+import { connect } from 'react-redux';
 
 class BoardHeader extends Component {
     render() {
@@ -17,7 +18,7 @@ class BoardHeader extends Component {
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                     <div style={{ flex: '1' }}>
                         <div className="boardTitleConatiner">
-                            <h2>Web design</h2>
+                            <h2>{this.props.currentBoardName}</h2>
                             <FaStar style={{ color: "grey", padding: "5px" }} size={20} />
                         </div>
                         <div>
@@ -55,7 +56,7 @@ class BoardHeader extends Component {
                             alignItems: "center",
                             fontSize: "14px"
                         }}>
-                            <img src={zoomIcon} style={{ height: "2.5vh", paddingRight: "3px" }} />
+                            <img src={zoomIcon} style={{ height: "2.5vh", paddingRight: "3px" }} alt="zoom-icon" />
                             <span>Start zoom call</span>
                         </div>
                         <div style={{ border: "1px solid black", display: 'flex', fontSize: "14px", padding: "5px" }}>
@@ -125,4 +126,10 @@ class BoardHeader extends Component {
     }
 }
 
-export default BoardHeader
+const mapStateToProps = (state) => {
+    return {
+        currentBoardName: state.boardName
+    }
+}
+
+export default connect(mapStateToProps, null)(BoardHeader)
